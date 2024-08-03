@@ -2,42 +2,10 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery';
 import 'odometer/themes/odometer-theme-default.css';
-import Odometer from 'odometer';
+
 
 function VisCard() {
-    useEffect(() => {
-        const handleScroll = () => {
-            if (typeof document !== 'undefined') {
-                const scrollTop = $(document).scrollTop() ?? 0;
-                $('.odometer').each(function () {
-                    const parentSection = $(this).closest('section');
-                    if (parentSection.length) {
-                        const parentSectionPosition = parentSection.position();
-                        if (parentSectionPosition) {
-                            const parentSectionTop = parentSectionPosition.top;
-                            if (scrollTop > parentSectionTop - 300) {
-                                if ($(this).data('status') === 'yes') {
-                                    const od = new Odometer({
-                                        el: this,
-                                        value: 0,
-                                        format: '(,ddd)', // Customize the format if needed
-                                    });
-                                    od.update($(this).data('count'));
-                                    $(this).data('status', 'no');
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-        };
-
-        $(document).scroll(handleScroll);
-
-        return () => {
-            $(document).off('scroll', handleScroll);
-        };
-    }, []);
+   
 
     return (
         <section className="content-section" style={{ direction: 'ltr' }}>

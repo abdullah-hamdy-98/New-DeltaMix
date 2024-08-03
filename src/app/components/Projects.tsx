@@ -1,5 +1,4 @@
 "use client";
-import { useEffect, useRef } from 'react';
 import { Navigation, Pagination, Scrollbar, A11y, Controller } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -96,7 +95,7 @@ function Projects() {
                                 <figure className="project-box">
                                     <a href="/"><img src="images/Projects/4.jpg" alt="Image" /></a>
                                     <figcaption>
-                                        <h5 style={{ textAlign: 'right' , fontFamily:'GESSTwo' }}>كلية التربية - جامعة طنطا</h5>
+                                        <h5 style={{ textAlign: 'right', fontFamily: 'GESSTwo' }}>كلية التربية - جامعة طنطا</h5>
                                         <p style={{ textAlign: 'right' }}>هذا النص هو عنصر مؤقت يتم استخدامه لحين الانتهاء من وضع النص الأصلي. يُرجى استبداله بالنص النهائي عند توفره.</p>
                                     </figcaption>
                                 </figure>

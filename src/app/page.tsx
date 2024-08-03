@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Swiper from './components/swiper';
 import Loader from './components/Loader';
 import ChairmanSpeech from './components/ChairmanSpeech';

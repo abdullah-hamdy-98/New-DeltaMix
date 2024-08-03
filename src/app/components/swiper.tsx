@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef } from 'react';
-import Image from "next/image";
 import { Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';

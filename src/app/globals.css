@@ -556,6 +556,7 @@ a:hover {
   margin: 3px 0;
   padding: 0;
   list-style: none;
+
 }
 .side-widget .site-menu ul li ul {
   display: none;
@@ -773,6 +774,7 @@ a:hover {
   display: block;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 .navbar .site-menu ul li {
   display: inline-block;
@@ -780,6 +782,7 @@ a:hover {
   padding: 0;
   list-style: none;
   position: relative;
+  text-align: center;
 }
 .navbar .site-menu ul li ul {
   display: none;
@@ -788,6 +791,7 @@ a:hover {
   top: calc(100% + 20px);
   background: #1e90ff;
   padding: 30px;
+  text-align: center;
 }
 .navbar .site-menu ul li ul:before {
   content: "";
@@ -796,6 +800,7 @@ a:hover {
   position: absolute;
   left: 0;
   top: -20px;
+  text-align: center;
 }
 .navbar .site-menu ul li ul li {
   width: 100%;
@@ -803,7 +808,10 @@ a:hover {
   margin: 0;
   margin-bottom: 10px;
   white-space: nowrap;
+  text-align: center;
 }
+
+
 .navbar .site-menu ul li ul li:last-child {
   margin-bottom: 0;
 }
@@ -822,7 +830,13 @@ a:hover {
 }
 .navbar .site-menu ul li a:hover {
   text-decoration: none;
+
 }
+
+.navbar .site-menu ul li ul li:hover {
+  text-decoration: none;
+} 
+
 .navbar .site-menu ul li a:before {
   content: "";
   display: block;
@@ -841,13 +855,16 @@ a:hover {
   bottom: 0;
   height: 2px;
   width: 0;
-  background: #1e90ff;
+  background: #0f4983;
   transition: width 0.25s ease;
+  opacity: 0.25;
 }
 .navbar .site-menu ul li a:hover:before {
   width: 100%;
-  background: #1e90ff;
+  background: #0f4983;
   transition: width 0.25s ease;
+  opacity: 0.25;
+
 }
 .navbar .site-menu ul li a:hover:after {
   width: 100%;

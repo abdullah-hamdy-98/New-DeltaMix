@@ -76,14 +76,14 @@ function NavBar() {
                         <li><a href="#">عن الشركة</a>
                             <ul>
                                 <li><a href="about-company.html">عن الشركة</a></li>
-                                <li><a href="core-values.html">Core Values</a></li>
-                                <li><a href="leadership.html">Leadership</a></li>
-                                <li><a href="our-history.html">Our History</a></li>
-                                <li><a href="offices.html">Offices</a></li>
-                                <li><a href="certificates.html">Certificates</a></li>
+                                <li><a href="core-values.html">إمكانيات الشركة</a></li>
+                                <li><a href="leadership.html">الطوب الأسمنتى الخفيف</a></li>
+                                <li><a href="our-history.html">الإشراف والإنتاج</a></li>
+                                <li><a href="offices.html">إدارة الجودة</a></li>
+                                <li><a href="certificates.html">الوظائف</a></li>
                             </ul>
                         </li>
-                        <li><a href="services.html">ألخدمات</a></li>
+                        <li><a href="services.html">المحطات</a></li>
                         <li><a href="projects.html">المشروعات</a></li>
                         <li><a href="news.html">الأخبار</a></li>
                         <li><a href="contact.html">إتصل بنا</a></li>
@@ -103,7 +103,7 @@ function NavBar() {
                         <span></span>
                     </div>
                 </div>
-                <a href="#sales-specialist-form" className="navbar-button" data-fancybox>
+                <a href="/" className="navbar-button" data-fancybox>
                     <i className="lni lni-user"></i>
                     <span>تسجيل الدخول</span>
                 </a>

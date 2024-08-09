@@ -37,7 +37,7 @@ function VisCard() {
                         <div className="counter-box" style={{ fontSize: '28px' , textAlign:'center'}} ref={ref}>
                             {isVisible && (
                                 <div style={{ fontSize: '28px' , textAlign:'center' }}>
-                                    <CountUp end={20} duration={4} />
+                                    <CountUp end={30} duration={4} />
                                 </div>
                             )}
                             
@@ -49,7 +49,7 @@ function VisCard() {
                         <div className="counter-box" style={{ fontSize: '28px' , textAlign:'center'}}>
                             {isVisible && (
                                 <div style={{ fontSize: '28px' , textAlign:'center'}}>
-                                    <CountUp end={4} duration={4} />
+                                    <CountUp end={9} duration={4} />
                                 </div>
                             )}
                             
@@ -61,7 +61,7 @@ function VisCard() {
                         <div className="counter-box" style={{ fontSize: '28px' , textAlign:'center'}}>
                             {isVisible && (
                                 <div style={{ fontSize: '28px' , textAlign:'center'}}>
-                                    <CountUp end={3} duration={4} />
+                                    <CountUp end={6} duration={4} />
                                 </div>
                             )}
                             
@@ -73,11 +73,11 @@ function VisCard() {
                         <div className="counter-box" style={{ fontSize: '28px' , textAlign:'center'}}>
                             {isVisible && (
                                 <div style={{ fontSize: '28px' , textAlign:'center'}}>
-                                    <CountUp end={2} duration={4} />
+                                    <CountUp end={280} duration={4} />
                                 </div>
                             )}
                             
-                            <h6>مولد كهربائى</h6>
+                            <h6>عامل</h6>
                             <p>ذلك للحرص علي العمل دون توقف علي مدار 24 ساعه</p>
                         </div>
                     </div>

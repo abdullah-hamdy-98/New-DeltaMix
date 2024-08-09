@@ -1127,6 +1127,7 @@ a:hover {
 
 /* PAGE HEADER */
 .page-header {
+  text-align: right;
   width: 100%;
   height: 500px;
   display: flex;

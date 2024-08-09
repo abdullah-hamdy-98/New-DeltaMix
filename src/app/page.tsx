@@ -18,7 +18,7 @@ function Home() {
       <Loader />
       <Navbar />
       <Swiper />
-      <Cards />
+     
       <LastNews />
       <VisCards />
       <Projects />

@@ -102,20 +102,20 @@ function Header() {
                 >
                     <SwiperSlide>
                         <div className="swiper-slide">
-                            <div className="slide-image" style={{ backgroundImage: 'url(images/slide01.jpg)' }}></div>
+                            <div className="slide-image" style={{ backgroundImage: 'url(images/img-slide/slide01.jpg)' }}></div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="swiper-slide">
-                            <div className="slide-image" style={{ backgroundImage: 'url(images/slide02.jpg)' }}></div>
+                            <div className="slide-image" style={{ backgroundImage: 'url(images/img-slide/slide02.jpg)' }}></div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="swiper-slide">
-                            <div className="slide-image" style={{ backgroundImage: 'url(images/slide03.jpg)' }}></div>
+                            <div className="slide-image" style={{ backgroundImage: 'url(images/img-slide/slide03.jpg)' }}></div>
                         </div>
                     </SwiperSlide>
-                    <div className="header-box"> <b>17</b> <small>YEARS OF EXPERIENCE</small> </div>
+                    {/* <div className="header-box"> <b>17</b> <small>YEARS OF EXPERIENCE</small> </div> */}
                 </Swiper>
             </div>
         </header>

@@ -6,7 +6,7 @@ function ChairmanSpeech() {
         <>
             <section className="content-section">
                 <div className="container">
-                    <div className="row align-items-center">
+                    <div className="row align-items-right">
                         <div className="col-12">
                             <div className="section-title">
                                

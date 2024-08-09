@@ -6,7 +6,7 @@ function LastNews() {
                     <div className="row">
                         <div className="col-12">
                             <div className="section-title">
-                                <h6>أخر الأخبار</h6>
+                                <h6>أحدث الأخبار </h6>
                             </div>
                         </div>
                         <div className="col-lg-5">

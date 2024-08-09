@@ -9,23 +9,25 @@ import VisCards from './components/VisCards'
 import VideoSection from './components/VideoSection'
 import LastNews from './components/LastNews'
 import Footer from './components/Footer'
-import Cards from './components/Cards'
+import Search from './components/SearchBox'
+import Mobile from './components/MobileVersion'
 
 
 function Home() {
   return (
     <>
       <Loader />
+      <Mobile />
       <Navbar />
+      <Search />
       <Swiper />
-     
+      <ChairmanSpeech />
       <LastNews />
       <VisCards />
       <Projects />
       <Major />
       <VideoSection />
       <OurCompany />
-      <ChairmanSpeech />
       <Footer />
 
     </>

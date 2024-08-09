@@ -37,7 +37,7 @@ function VisCard() {
                         <div className="counter-box" style={{ fontSize: '28px' , textAlign:'center'}} ref={ref}>
                             {isVisible && (
                                 <div style={{ fontSize: '28px' , textAlign:'center' }}>
-                                    <CountUp end={20} duration={2} />
+                                    <CountUp end={20} duration={4} />
                                 </div>
                             )}
                             
@@ -49,7 +49,7 @@ function VisCard() {
                         <div className="counter-box" style={{ fontSize: '28px' , textAlign:'center'}}>
                             {isVisible && (
                                 <div style={{ fontSize: '28px' , textAlign:'center'}}>
-                                    <CountUp end={4} duration={2} />
+                                    <CountUp end={4} duration={4} />
                                 </div>
                             )}
                             
@@ -61,7 +61,7 @@ function VisCard() {
                         <div className="counter-box" style={{ fontSize: '28px' , textAlign:'center'}}>
                             {isVisible && (
                                 <div style={{ fontSize: '28px' , textAlign:'center'}}>
-                                    <CountUp end={3} duration={2} />
+                                    <CountUp end={3} duration={4} />
                                 </div>
                             )}
                             
@@ -73,7 +73,7 @@ function VisCard() {
                         <div className="counter-box" style={{ fontSize: '28px' , textAlign:'center'}}>
                             {isVisible && (
                                 <div style={{ fontSize: '28px' , textAlign:'center'}}>
-                                    <CountUp end={2} duration={2} />
+                                    <CountUp end={2} duration={4} />
                                 </div>
                             )}
                             

@@ -46,7 +46,14 @@ function NavBar() {
             }
         };
 
+        const handleHamburgerClick = () => {
+            $('.hamburger').toggleClass('open');
+            $(".side-widget").toggleClass('active');
+            $("body").toggleClass("overflow");
+        };
+
         $('.navbar .search').on('click', handleSearchClick);
+        $('.hamburger').on('click', handleHamburgerClick);
         $(window).on("scroll touchmove", handleScroll);
         $(window).scroll(handleWindowScroll);
 
@@ -59,6 +66,7 @@ function NavBar() {
 
         return () => {
             $('.navbar .search').off('click', handleSearchClick);
+            $('.hamburger').off('click', handleHamburgerClick);
             $(window).off("scroll touchmove", handleScroll);
             $(window).off('scroll', handleWindowScroll);
             clearInterval(intervalId);
@@ -69,7 +77,7 @@ function NavBar() {
         <nav className="navbar">
             <div className="container">
                 <div className="logo">
-                    <Image width={300} height={92} src="/images/SiteLogo/site-logo.png" alt="Image" />
+                    <Image width={300} height={78} src="/images/SiteLogo/site-logo.png" alt="Image" />
                 </div>
                 <div className="site-menu">
                     <ul>

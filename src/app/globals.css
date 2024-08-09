@@ -128,7 +128,7 @@ figure {
 }
 
 /* FORM ELEMENTS */
-input[type=text], input[type=email], input[type=search], input[type=password] {
+input[type=text], input[type=email] ,input[type=phone], input[type=search], input[type=password] {
   width: 420px;
   max-width: 100%;
   height: 68px;
@@ -1057,7 +1057,7 @@ a:hover {
   background: #1e90ff;
 }
 .slider .slider-main {
-  width: calc(50vw + 80px);
+  width: calc(50vw + 71px);
   height: calc(100vh - 150px);
   overflow: hidden;
   margin: 0;
@@ -1182,9 +1182,7 @@ a:hover {
 .content-section-logos {
   width: 100%;
   display: block;
-  padding-top: 250px ;
-  margin-top: -150px;
-  padding-bottom: 80px;
+  padding: 80px 0px ;
   position: relative;
   display: flex;
   justify-content: center;
@@ -1427,7 +1425,9 @@ a:hover {
   width: 100%;
   display: block;
   border: 1px solid #e8e8e8;
-  padding: 30px;
+  padding: 80px 30px;
+  background-image: url('/images/header-pattern.png');
+  background-size: cover;
   position: relative;
   -webkit-transition: all 0.25s ease-in-out;
   -moz-transition: all 0.25s ease-in-out;
@@ -2750,7 +2750,7 @@ a:hover {
 
 /* LOGO ITEMS */
 .logo-item {
-  width: 100%;
+  width: 110%;
   display: block;
   margin: 0;
   -webkit-transition: all 0.25s ease-in-out;
@@ -2799,7 +2799,7 @@ a:hover {
 }
 .recent-news figure {
   width: 100%;
-  max-height: 220px;
+  max-height: 320px;
   display: block;
   margin: 0;
   position: relative;
@@ -2810,9 +2810,11 @@ a:hover {
   width: 100%;
   max-width: inherit;
   min-height: 220px;
-  filter: grayscale(1);
+  filter: grayscale(0.85);
 }
 .recent-news .content {
+  text-align: right;
+
   width: 100%;
   height: 100%;
   display: block;
@@ -3074,14 +3076,15 @@ a:hover {
 .footer-bar {
   width: 100%;
   display: block;
-  padding: 80px 0;
+  padding: 150px 0;
   position: relative;
   overflow: hidden;
   color: #fff;
   background-color: #232222;
-  background-image: url("../../public/images/header-pattern.png");
+  background-image: url("../../public/images/footer.png");
   background-position: center;
-  background-size: cover;
+  background-size: cover; /* Ensures the image covers the entire div */
+
 }
 .footer-bar .logo {
   width: 100%;
@@ -3168,6 +3171,7 @@ a:hover {
 
 /* FOOTER */
 .footer {
+  text-align: right;
   width: 100%;
   display: block;
   background-color: #0b0b0b;
@@ -3196,7 +3200,7 @@ a:hover {
   margin-bottom: 20px;
   font-weight: 600;
   opacity: 0.7;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
 }
 .footer address {
   width: 100%;
@@ -3224,22 +3228,38 @@ a:hover {
 }
 .footer form input[type=email] {
   width: 100%;
-  height: 68px;
+  height: 45px;
   border: none;
   background: #232222;
-  padding: 30px;
+  padding: 25px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.footer form input[type=phone] {
+  width: 100%;
+  height: 45px;
+  border: none;
+  background: #232222;
+  padding: 25px;
   color: #fff;
   margin-bottom: 15px;
 }
 .footer form input[type=submit] {
-  height: 60px;
+  height: 45px;
   background: #1e90ff;
   border: none;
   padding: 0 40px;
   font-size: 13px;
   font-weight: 600;
+  border-radius: 5px;
+}
+
+.footer form input[type=submit]:hover {
+  transition:  background 0.25s ease;
+  background: #0d57a1;
 }
 .footer .footer-bottom {
+  text-align: left;
   width: 100%;
   display: block;
   margin-top: 50px;
@@ -3247,6 +3267,7 @@ a:hover {
   padding: 40px 0;
 }
 .footer .footer-bottom span {
+
   opacity: 0.7;
   font-size: 13px;
 }
@@ -3862,4 +3883,50 @@ input::-moz-focus-inner, input::-moz-focus-outer {
     margin-left: 0;
     margin-right: 10px;
   }
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  align-items: right;
+}
+
+.widget-title-footer {
+  margin-bottom: 20px; /* Adjust the spacing between the title and the logos as needed */
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.widget-title-footer {
+  margin-bottom: 20px; /* Adjust the spacing between the title and the logos as needed */
+}
+
+.footer-pic {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px; /* Adjust the gap between logos as needed */
+  justify-items: end; /* Align items to the end of their grid area */
+  max-width: 100%; /* Ensure it doesn't exceed the container width */
+}
+
+.footer-logos {
+  /* Ensures images are consistently sized */
+  width: 120px; /* Set the desired width */
+  height: 35px; /* Set the desired height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure overflow is hidden */
+}
+
+.footer-logos img {
+  width: 100%; /* Ensures image takes the full width of its container */
+  height: 100%; 
+  object-fit: contain; 
 }

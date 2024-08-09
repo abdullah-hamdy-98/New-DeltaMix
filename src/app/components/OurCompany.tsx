@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from 'react';
 import Image from 'next/image';
-import $ from 'jquery'; // Import jQuery
+import $ from 'jquery'; 
 
 function OurCompany() {
     useEffect(() => {
@@ -16,13 +16,13 @@ function OurCompany() {
                     "opacity": "1"
                 });
             });
-    }, []); // Empty dependency array means this effect runs once after the initial render
+    }, []); 
 
     return (
         <>
             <div className="content-section-logos" style={{ backgroundColor: '#f7f6f1' }}>
                 <div className="container">
-                    <div className='Logos-title'><h6 className="">شركات المجموعة</h6></div>
+                   
                     <div className="row no-gutters">
                         <div className="col-lg-2 col-md-4 col-6">
                             <figure className="logo-item" style={{ cursor: 'Pointer' }}>

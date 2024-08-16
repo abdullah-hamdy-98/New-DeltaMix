@@ -62,19 +62,19 @@ function Mobile() {
                                     </span>
                                     {isMenuOpen && (
                                         <ul>
-                                            <li ><a href="about-company.html" style={{ fontSize: '12px' }}>عن الشركة</a></li>
-                                            <li><a href="core-values.html" style={{ fontSize: '12px' }}>إمكانيات الشركة</a></li>
-                                            <li><a href="leadership.html" style={{ fontSize: '12px' }}>الطوب الأسمنتى الخفيف</a></li>
-                                            <li><a href="our-history.html" style={{ fontSize: '12px' }}>الإشراف والإنتاج</a></li>
-                                            <li><a href="offices.html" style={{ fontSize: '12px' }}>إدارة الجودة</a></li>
-                                            <li><a href="certificates.html" style={{ fontSize: '12px' }}>الوظائف</a></li>
+                                            <li ><Link href="/about-us" style={{ fontSize: '12px' }}>عن الشركة</Link></li>
+                                            <li><Link href="/company-cap" style={{ fontSize: '12px' }}>إمكانيات الشركة</Link></li>
+                                            <li><Link href="/light-bricks" style={{ fontSize: '12px' }}>الطوب الأسمنتى الخفيف</Link></li>
+                                            <li><Link href="/production" style={{ fontSize: '12px' }}>الإشراف والإنتاج</Link></li>
+                                            <li><Link href="/q-management" style={{ fontSize: '12px' }}>إدارة الجودة</Link></li>
+                                            <li><Link href="/careers" style={{ fontSize: '12px' }}>الوظائف</Link></li>
                                         </ul>
                                     )}
                                 </li>
-                                <li><a href="services.html">المحطات</a></li>
-                                <li><a href="projects.html">المشروعات</a></li>
-                                <li><a href="news.html">الأخبار</a></li>
-                                <li><a href="contact.html">إتصل بنا</a></li>
+                                <li><Link href="/stations">المحطات</Link></li>
+                                <li><Link href="/projects">المشروعات</Link></li>
+                                <li><Link href="/news">الأخبار</Link></li>
+                                <li><Link href="/contact">إتصل بنا</Link></li>
                             </ul>
                         </div>
                         {/* end site-menu */}

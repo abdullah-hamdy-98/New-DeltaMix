@@ -5,6 +5,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Link from 'next/link'
+import Image from 'next/image'
 
 function Projects() {
     return (
@@ -58,7 +60,7 @@ function Projects() {
                         <SwiperSlide>
                             <div className="swiper-slide">
                                 <figure className="project-box">
-                                    <a href="/"><img src="images/Projects/1.jpg" alt="Image" /></a>
+                                    <Link href="/projects" ><img src="images/Projects/1.jpg" alt="Image" /></Link>
                                     <figcaption >
                                         <h5 style={{ textAlign: 'right' }} >إعمار الأشرف</h5>
                                         <p style={{ textAlign: 'right' }}>هذا النص هو عنصر مؤقت يتم استخدامه لحين الانتهاء من وضع النص الأصلي. يُرجى استبداله بالنص النهائي عند توفره.</p>
@@ -69,7 +71,7 @@ function Projects() {
                         <SwiperSlide>
                             <div className="swiper-slide">
                                 <figure className="project-box">
-                                    <a href="/"><img src="images/Projects/2.jpg" alt="Image" /></a>
+                                <Link href="/projects" ><img src="images/Projects/2.jpg" alt="Image" /></Link>
                                     <figcaption>
                                         <h5 style={{ textAlign: 'right' }}>إعمار الحرية</h5>
                                         <p style={{ textAlign: 'right' }}>هذا النص هو عنصر مؤقت يتم استخدامه لحين الانتهاء من وضع النص الأصلي. يُرجى استبداله بالنص النهائي عند توفره.</p>
@@ -81,7 +83,7 @@ function Projects() {
                         <SwiperSlide>
                             <div className="swiper-slide">
                                 <figure className="project-box">
-                                    <a href="/"><img src="images/Projects/3.jpg" alt="Image" /></a>
+                                <Link href="/projects" ><img src="images/Projects/3.jpg" alt="Image" /></Link>
                                     <figcaption>
                                         <h5 style={{ textAlign: 'right' }}>إعمار العرب</h5>
                                         <p style={{ textAlign: 'right' }}>هذا النص هو عنصر مؤقت يتم استخدامه لحين الانتهاء من وضع النص الأصلي. يُرجى استبداله بالنص النهائي عند توفره.</p>
@@ -93,7 +95,7 @@ function Projects() {
                         <SwiperSlide>
                             <div className="swiper-slide">
                                 <figure className="project-box">
-                                    <a href="/"><img src="images/Projects/4.jpg" alt="Image" /></a>
+                                <Link href="/projects" ><img src="images/Projects/4.jpg" alt="Image" /></Link>
                                     <figcaption>
                                         <h5 style={{ textAlign: 'right', fontFamily: 'GESSTwo' }}>كلية التربية - جامعة طنطا</h5>
                                         <p style={{ textAlign: 'right' }}>هذا النص هو عنصر مؤقت يتم استخدامه لحين الانتهاء من وضع النص الأصلي. يُرجى استبداله بالنص النهائي عند توفره.</p>
@@ -105,7 +107,7 @@ function Projects() {
                         <SwiperSlide>
                             <div className="swiper-slide">
                                 <figure className="project-box">
-                                    <a href="/"><img src="images/Projects/5.jpg" alt="Image" /></a>
+                                <Link href="/projects" ><img src="images/Projects/5.jpg" alt="Image" /></Link>
                                     <figcaption>
                                         <h5 style={{ textAlign: 'right' }}>مبنى الخدمات الطلابية - جامعة طنطا</h5>
                                         <p style={{ textAlign: 'right' }}>هذا النص هو عنصر مؤقت يتم استخدامه لحين الانتهاء من وضع النص الأصلي. يُرجى استبداله بالنص النهائي عند توفره.</p>
@@ -117,7 +119,7 @@ function Projects() {
                         <SwiperSlide>
                             <div className="swiper-slide">
                                 <figure className="project-box">
-                                    <a href="/"><img src="images/Projects/6.jpg" alt="Image" /></a>
+                                <Link href="/projects" ><img src="images/Projects/6.jpg" alt="Image" /></Link>
                                     <figcaption>
                                         <h5 style={{ textAlign: 'right' }}>مول العاصمة</h5>
                                         <p style={{ textAlign: 'right' }}>هذا النص هو عنصر مؤقت يتم استخدامه لحين الانتهاء من وضع النص الأصلي. يُرجى استبداله بالنص النهائي عند توفره.</p>
@@ -129,7 +131,7 @@ function Projects() {
                         <SwiperSlide>
                             <div className="swiper-slide">
                                 <figure className="project-box">
-                                    <a href="/"><img src="images/Projects/7.jpg" alt="Image" /></a>
+                                <Link href="/projects" ><img src="images/Projects/7.jpg" alt="Image" /></Link>
                                     <figcaption>
                                         <h5 style={{ textAlign: 'right' }}>كلية الهندسة - جامعة طنطا</h5>
                                         <p style={{ textAlign: 'right' }}>هذا النص هو عنصر مؤقت يتم استخدامه لحين الانتهاء من وضع النص الأصلي. يُرجى استبداله بالنص النهائي عند توفره.</p>

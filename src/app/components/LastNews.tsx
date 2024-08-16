@@ -1,3 +1,4 @@
+import Link from 'next/link'
 function LastNews() {
     return (
         <>
@@ -17,9 +18,9 @@ function LastNews() {
                                 <div className="content" >
                                     <small>29 فبراير, 2020</small>
                                     <h3>
-                                        <a href="#">
+                                        <Link href="/news/news-single">
                                             إفتتاح محطة دلتا ميكس فى كفر الزيات
-                                        </a>
+                                        </Link>
 
                                     </h3>
                                     <div className="author" >
@@ -41,15 +42,15 @@ function LastNews() {
                                         <div className="content">
                                             <small>29 فبراير, 2020</small>
                                             <h3>
-                                                <a href="#">
+                                                <Link href="/news/news-single">
                                                     إفتتاح محطة دلتا ميكس فى كفر الزيات
-                                                </a>
+                                                </Link>
 
                                             </h3>
                                             <div className="author" >
                                                 <img src="images/author01.png" alt="Image" />
                                                 <span>
-                                                بواسطة <b>Abdullah Hamdy</b>
+                                                    بواسطة <b>Abdullah Hamdy</b>
                                                 </span>
                                             </div>
                                         </div>
@@ -63,15 +64,15 @@ function LastNews() {
                                         <div className="content">
                                             <small>29 فبراير, 2020</small>
                                             <h3>
-                                                <a href="#">
+                                                <Link href="/news/news-single">
                                                     إفتتاح محطة دلتا ميكس فى كفر الزيات
-                                                </a>
+                                                </Link>
 
                                             </h3>
                                             <div className="author" >
                                                 <img src="images/author01.png" alt="Image" />
                                                 <span>
-                                                بواسطة <b>Abdullah Hamdy</b>
+                                                    بواسطة <b>Abdullah Hamdy</b>
                                                 </span>
                                             </div>
                                         </div>

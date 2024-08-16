@@ -22,6 +22,7 @@ function Footer() {
                                     data-fancybox
                                     data-width="640"
                                     data-height="360"
+                                    target="_blank"
                                 >
                                     الذهاب إلى الخريطة
                                 </a>

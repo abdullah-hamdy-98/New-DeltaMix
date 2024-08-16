@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import Loader from '../../components/Loader';
 import Mobile from '../../components/MobileVersion'
 import Navbar from '../../components/Navbar';

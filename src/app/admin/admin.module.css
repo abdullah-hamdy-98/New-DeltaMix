@@ -1,0 +1,97 @@
+.adminContainer {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+  
+  }
+  
+  .sidebar {
+    position: relative;
+    text-align: right;
+    width: 300px;
+    background-color: #ebebeb;
+    color: black;
+    padding: 70px;
+    -webkit-box-shadow: -1px 0px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 0px 7px -3px rgba(0,0,0,0.75);
+    box-shadow: -1px 0px 7px -3px rgba(0,0,0,0.30);
+    overflow: hidden; /* Ensures the overlay doesn’t exceed the sidebar */
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../../../public/images/header-pattern.png");
+    opacity: 0.5; /* Sets the opacity of the background image */
+    z-index: 0; /* Ensures the overlay is behind the content */
+    background-size: cover; /* Ensures the background image covers the sidebar */
+    background-repeat: no-repeat;
+}
+
+.sidebar * {
+    position: relative;
+    z-index: 1; /* Ensures content appears above the background image */
+}
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    text-decoration: none;
+    margin: 35px 0;
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 1;
+    transition: opacity 0.2s ease 0s;
+  }
+  
+  .sidebar ul li:hover {
+    opacity: 0.4;
+  }
+ 
+
+  .mainContent {
+    text-align: center;
+    flex: 1;
+    padding: 40px;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+  
+  .mainContent h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+  }
+  
+  .section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .section p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .sidebar ul li.active {
+    color: #167ce3;
+}
+
+
+.icon {
+  margin-left: 8px;
+  padding-bottom: 3px;
+
+}
+
+

@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import SwiperCore from 'swiper';
+import Image from 'next/image'
 
 // Initialize Swiper modules
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Controller, Autoplay]);
@@ -102,17 +103,23 @@ function Header() {
                 >
                     <SwiperSlide>
                         <div className="swiper-slide">
-                            <div className="slide-image" style={{ backgroundImage: 'url(images/img-slide/slide01.jpg)' }}></div>
+                            <div className="slide-image">
+                            <Image height={580} width={1920} src='/images/img-slide/slide01.jpg' alt='Slide 1'></Image>
+                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="swiper-slide">
-                            <div className="slide-image" style={{ backgroundImage: 'url(images/img-slide/slide02.jpg)' }}></div>
+                            <div className="slide-image">
+                            <Image height={580} width={1920} src='/images/img-slide/slide02.jpg' alt='Slide 2'></Image>
+                            </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="swiper-slide">
-                            <div className="slide-image" style={{ backgroundImage: 'url(images/img-slide/slide03.jpg)' }}></div>
+                            <div className="slide-image">
+                            <Image height={580} width={1920} src='/images/img-slide/slide03.jpg' alt='Slide 3'></Image>
+                            </div>
                         </div>
                     </SwiperSlide>
                     {/* <div className="header-box"> <b>17</b> <small>YEARS OF EXPERIENCE</small> </div> */}

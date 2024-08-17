@@ -112,7 +112,7 @@ function NavBar() {
                         <span></span>
                     </div>
                 </div>
-                <Link href="/" className="navbar-button" data-fancybox>
+                <Link href="/login" className="navbar-button" data-fancybox>
                     <i className="lni lni-user"></i>
                     <span>تسجيل الدخول</span>
                 </Link>

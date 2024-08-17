@@ -104,21 +104,21 @@ function Header() {
                     <SwiperSlide>
                         <div className="swiper-slide">
                             <div className="slide-image">
-                            <Image height={580} width={1920} src='/images/img-slide/slide01.jpg' alt='Slide 1'></Image>
+                            <Image height={580} width={5000} src='/images/img-slide/slide01.jpg' alt='Slide 1'></Image>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="swiper-slide">
                             <div className="slide-image">
-                            <Image height={580} width={1920} src='/images/img-slide/slide02.jpg' alt='Slide 2'></Image>
+                            <Image height={580} width={5000} src='/images/img-slide/slide02.jpg' alt='Slide 2'></Image>
                             </div>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className="swiper-slide">
                             <div className="slide-image">
-                            <Image height={580} width={1920} src='/images/img-slide/slide03.jpg' alt='Slide 3'></Image>
+                            <Image height={580} width={5000} src='/images/img-slide/slide03.jpg' alt='Slide 3'></Image>
                             </div>
                         </div>
                     </SwiperSlide>

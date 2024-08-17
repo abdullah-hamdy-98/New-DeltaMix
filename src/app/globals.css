@@ -3806,7 +3806,9 @@ input::-moz-focus-inner, input::-moz-focus-outer {
   }
 
   .slider .slider-main {
-    height: 400px;
+    height: 250px;
+    width: auto;
+    object-fit:contain;
     margin-bottom: 15px;
   }
 

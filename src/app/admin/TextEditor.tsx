@@ -1,6 +1,7 @@
+"use client";
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // Import Quill's styles
+import 'react-quill/dist/quill.snow.css';
 
 const modules = {
     toolbar: [
@@ -17,15 +18,24 @@ const modules = {
     }
 };
 
-function MyEditor() {
+interface MyEditorProps {
+    onChange: (content: string) => void;
+}
+
+const MyEditor: React.FC<MyEditorProps> = ({ onChange }) => {
     const [value, setValue] = useState('');
+
+    const handleChange = (content: string) => {
+        setValue(content);
+        onChange(content);
+    };
 
     return (
         <ReactQuill
             value={value}
-            onChange={setValue}
+            onChange={handleChange}
             modules={modules}
-            style={{ height: '220px' }} 
+            style={{ height: '220px' }}
         />
     );
 }

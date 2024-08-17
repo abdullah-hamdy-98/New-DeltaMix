@@ -1731,6 +1731,8 @@ a:hover {
 }
 .project-specifications table {
   width: 100%;
+  background-image: url("../../public/images/header-pattern.png");
+  background-size: cover;
   font-size: 15px;
 }
 .project-specifications table tr td:first-child {

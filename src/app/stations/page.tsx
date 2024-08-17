@@ -43,7 +43,7 @@ function station() {
                                 ].map((project, index) => (
                                     <li className={project.className} key={index}>
                                         <figure className="project-box">
-                                            <Image src={project.imgSrc} alt="Image" height={400} width={1920} />
+                                            <Link href="stations/single-station"><Image src={project.imgSrc} alt="Image" height={400} width={1920} /></Link>
                                             <figcaption>
                                                 <h5>{project.title}</h5>
                                             </figcaption>

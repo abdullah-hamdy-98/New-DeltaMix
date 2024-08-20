@@ -45,7 +45,7 @@ const NewsTable: React.FC = () => {
                 <p>{image ? image.name : 'إرفاق صورة'}</p>
             </label>
 
-           
+            <MyEditor onChange={setContent} />
 
             <button className='submit-button'>نشر</button>
         </form>

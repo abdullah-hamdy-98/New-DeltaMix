@@ -4002,11 +4002,3 @@ input::-moz-focus-inner, input::-moz-focus-outer {
   color: #fff; 
 }
 
-
-.overflow-height {
-  display: flex;
-  align-items: flex-start;
-  overflow: hidden;
-  
-}
-

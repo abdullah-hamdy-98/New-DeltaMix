@@ -57,3 +57,19 @@
   .file-input-label p:hover {
     background-color: #b1b1b1;
   }
+
+  
+
+.overflow-height {
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  
+}
+
+.ck-editor__editable {
+  text-align: rtl;
+  min-height: 250px;
+  max-height: 250px;
+  overflow-y: auto;
+}

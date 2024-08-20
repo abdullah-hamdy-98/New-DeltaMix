@@ -1,41 +1,33 @@
-"use client";
-import React, { useState } from 'react';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
-
-const modules = {
-    toolbar: [
-        [{ 'header': '1' }, { 'header': '2' }],
-        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-        ['bold', 'italic', 'underline'],
-        ['link'],
-        [{ 'color': [] }, { 'background': [] }],
-        [{ 'align': [] }],
-        ['clean']
-    ],
-    clipboard: {
-        matchVisual: false,
-    }
-};
+import React from 'react';
+import { Editor } from '@tinymce/tinymce-react';
 
 interface MyEditorProps {
     onChange: (content: string) => void;
 }
 
 const MyEditor: React.FC<MyEditorProps> = ({ onChange }) => {
-    const [value, setValue] = useState('');
-
-    const handleChange = (content: string) => {
-        setValue(content);
+    const handleEditorChange = (content: string) => {
         onChange(content);
     };
 
     return (
-        <ReactQuill
-            value={value}
-            onChange={handleChange}
-            modules={modules}
-            style={{ height: '220px' }}
+        <Editor
+            apiKey="krj5e59744igqs8go3elh5uioxltldthc5tu5xbmgeofuk2v"
+            init={{
+                height: 250,
+                menubar: true,
+                plugins: [
+                    'advlist autolink lists link image charmap preview anchor',
+                    'searchreplace visualblocks code fullscreen',
+                    'insertdatetime media table paste code help wordcount',
+                    'directionality colorpicker textpattern'
+                ],
+                toolbar: 'undo redo | formatselect | fontsize | bold italic underline strikethrough | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat  | rtl ltr',
+                content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+                directionality: 'rtl', // or 'ltr' for LTR support
+                branding: false // Remove TinyMCE branding
+            }}
+            onEditorChange={handleEditorChange}
         />
     );
 }

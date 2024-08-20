@@ -1,20 +1,28 @@
 "use client"
 import React, { useState } from 'react';
 import Link from 'next/link';
-import {  toast } from 'react-toastify';
-
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 const LoginForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const router = useRouter();
 
     const formSubmitHandler = (e: React.FormEvent) => {
         e.preventDefault();
-        if (username === "") return toast.error("يرجى إدراج إسم المستخدم") 
-        if (password === "") return toast.error("كلمة المرور خاطئة") 
+
+        if (username === "") {
+            return toast.error("يرجى إدراج إسم المستخدم");
+        }
+
+        if (password === "") {
+            return toast.error("كلمة المرور خاطئة");
+        }
 
         console.log(username, password);
-     
+
+        router.push('/admin');
     }
 
     return (
@@ -40,7 +48,6 @@ const LoginForm = () => {
 
                 <button type="submit">دخول</button>
                 <Link href='/'>الرئيسية</Link>
-
             </form>
         </>
     )

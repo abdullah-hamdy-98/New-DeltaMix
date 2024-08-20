@@ -1,5 +1,5 @@
 import React from 'react';
-import "../globals.css";
+import "./globals.css";
 
 import Loader from '../components/Loader';
 import Mobile from '../components/MobileVersion';

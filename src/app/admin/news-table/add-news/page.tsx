@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import MyEditor from '../TextEditor';
-import '../globals.css';
+import MyEditor from '../../TextEditor';
+import '../../globals.css';
 import { toast } from 'react-toastify';
 
 const NewsTable: React.FC = () => {
@@ -26,6 +26,7 @@ const NewsTable: React.FC = () => {
 
     return (
         <form onSubmit={formSubmitHandler} className="form-container">
+            <label htmlFor="title" className="input-label">عنوان الخبر</label>
             <input
                 className='input-field'
                 placeholder="عنوان الخبر"
@@ -47,7 +48,7 @@ const NewsTable: React.FC = () => {
 
             <MyEditor onChange={setContent} />
 
-            <button className='submit-button'>نشر</button>
+            <button type="submit" className='submit-button'>نشر</button>
         </form>
     );
 };

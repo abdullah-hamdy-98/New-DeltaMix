@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { allNews } from '@/utils/data'
-import { News } from '@/utils/types';
 import { createNewsSchema } from '@/utils/validationSchemas';
 import { CreateNewsDto } from '@/utils/dtos';
+import {  News } from '@prisma/client'
+import prisma from '@/utils/db'
 
 
 /**
@@ -12,8 +12,16 @@ import { CreateNewsDto } from '@/utils/dtos';
  * @assess public
  */
 
-export function GET(request: NextRequest) {
-    return NextResponse.json(allNews, { status: 200 });
+export async function GET(request: NextRequest) {
+    try {
+        const allNews = await prisma.news.findMany();
+        return NextResponse.json(allNews, { status: 200 });
+
+    } catch (error) {
+        return NextResponse.json(
+            { message: 'Internal Server Error' }, { status: 500 }
+        )
+    }
 }
 
 
@@ -25,20 +33,29 @@ export function GET(request: NextRequest) {
  */
 
 export async function POST(request: NextRequest) {
-    const body = (await request.json()) as CreateNewsDto;
+    try {
 
-    const validation = createNewsSchema.safeParse(body)
-    if (!validation.success){
-        return NextResponse.json({message : validation.error.errors[0].message} , {status : 400})
+        const body = (await request.json()) as CreateNewsDto;
+
+        const validation = createNewsSchema.safeParse(body)
+        if (!validation.success) {
+            return NextResponse.json({ message: validation.error.errors[0].message }, { status: 400 })
+        }
+
+        const addNews: News = await prisma.news.create({
+            data: {
+                Title: body.Title,
+                Dscr: body.Dscr,
+                Img: body.Img,
+                AuthorId: 200
+            }
+        });
+
+        return NextResponse.json(addNews, { status: 201 });
+
+    } catch (error) {
+        return NextResponse.json(
+            { message: 'Internal Server Error' }, { status: 500 }
+        )
     }
-
-    const addNews: News = {
-        id: allNews.length + 1,
-        userid: 200,
-        Title: body.Title,
-        name: body.name
-    }
-
-    allNews.push(addNews);
-    return NextResponse.json(addNews, { status: 201 });
 }

@@ -11,7 +11,9 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^43.0.0",
     "@ckeditor/ckeditor5-react": "^9.0.0",
+    "@prisma/client": "^5.18.0",
     "@tinymce/tinymce-react": "^5.1.1",
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "countup.js": "^2.8.0",
     "dotenv": "^16.4.5",
@@ -41,6 +43,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/draft-js": "^0.11.18",
     "@types/jquery": "^3.5.30",
     "@types/node": "^20.16.0",
@@ -48,6 +51,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
+    "prisma": "^5.18.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }

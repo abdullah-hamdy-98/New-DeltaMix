@@ -1,9 +1,19 @@
 export interface CreateNewsDto {
     Title: string,
-    name: string
+    Dscr: string,
+    Img: string,
+    AuthorId: number
 }
 
 export interface UpdateNewsDto {
     Title?: string,
-    name?: string
+    Dscr?: string,
+    Img?: string,
+    AuthorI?: number
+}
+
+
+export interface LoginUserDto {
+    UserId: number,
+    Pwd: string
 }

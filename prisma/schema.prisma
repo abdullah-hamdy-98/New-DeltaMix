@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model News {
+  Id        Int      @id @default(autoincrement())
+  Title     String   @db.VarChar(255)
+  Dscr      String   @db.VarChar(max)
+  Img       String   @db.VarChar(255)
+  EntryDate DateTime @default(now())
+  AuthorId  Int
+}
+
+model Stations {
+  Id               Int      @id @default(autoincrement())
+  Station_Title    String   @db.VarChar(255)
+  Station_Dscr     String   @db.VarChar(max)
+  Station_Img      String   @db.VarChar(255)
+  Station_Locat    String   @db.VarChar(255)
+  Station_Type     String   @db.VarChar(255)
+  Station_Country  String   @db.VarChar(255)
+  Station_Model    String   @db.VarChar(255)
+  Station_Capacity String   @db.VarChar(255)
+  Station_Silohat  String   @db.VarChar(255)
+  Station_Geo      String   @db.VarChar(255)
+  EntryDate        DateTime @default(now())
+  AuthorId         Int
+}
+
+model Projects {
+  Id            Int      @id @default(autoincrement())
+  Project_Title String   @db.VarChar(255)
+  Project_Img   String   @db.VarChar(255)
+  EntryDate     DateTime @default(now())
+  AuthorId      Int
+}
+
+model Users {
+  UserId    Int      @id @default(autoincrement())
+  UserName  String   @unique @db.VarChar(255)
+  Pwd       String   @db.VarChar(255)
+  Img       String   @db.VarChar(255)
+  IsAdmin   Boolean  @default(false)
+  EntryDate DateTime @default(now())
+  AuthorId  Int
+}

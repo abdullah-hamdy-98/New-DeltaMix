@@ -1,10 +1,25 @@
 "use client"
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'
 import Link from 'next/link';
-import { FaNewspaper, FaBroadcastTower, FaProjectDiagram, FaHome, FaCog, FaSignOutAlt } from 'react-icons/fa';
+import { FaNewspaper, FaBroadcastTower, FaProjectDiagram, FaHome, FaSignOutAlt } from 'react-icons/fa';
 import styles from './admin.module.css';
+import { toast } from 'react-toastify';
+import { DOMAIN } from '@/utils/constants';
+import axios from 'axios';
 
 const SideBar = () => {
+    const router = useRouter();
+    const logoutHandler = async () => {
+        try {
+            await axios.get(`${DOMAIN}/api/users/logout`)
+            router.push("/")
+            router.refresh()
+        } catch (error) {
+            toast.warning("Something wen wrong");
+            console.log(error);
+        }
+    }
     const [activeItem, setActiveItem] = useState<string | null>(null);
 
     const toggleItem = (item: string) => {
@@ -115,11 +130,11 @@ const SideBar = () => {
                         </ul>
                     )}
 
-                    <Link href='/' style={{ textDecoration: 'none' }}>
-                        <li>
-                            <FaSignOutAlt className={styles.icon} /> تسجيل الخروج
-                        </li>
-                    </Link>
+                    <li>
+                        <button style={{ "border": "0px", "background": "rgba(128, 128, 128, 0)" }}
+                            onClick={logoutHandler}
+                        > <FaSignOutAlt className={styles.icon} /> تسجيل الخروج </button>
+                    </li>
                 </ul>
             </aside>
         </div>

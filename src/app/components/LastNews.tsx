@@ -1,89 +1,81 @@
-import Link from 'next/link'
-function LastNews() {
+import Link from 'next/link';
+import { News } from '@prisma/client';
+import { getHomeNews } from '@/apiCalls/NewsApiCalls';
+
+async function LastNews() {
+    const news: News[] = await getHomeNews();
+
+    // Render the first three news items
+    const firstNews = news[0];
+    const otherNews = news.slice(1, 3);
+
     return (
-        <>
-            <section className="content-section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className="section-title">
-                                <h6>أحدث الأخبار </h6>
-                            </div>
+        <section className="content-section">
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <div className="section-title">
+                            <h6>أحدث الأخبار</h6>
                         </div>
+                    </div>
+
+                    {/* Display the first news item prominently */}
+                    {firstNews && (
                         <div className="col-lg-5">
                             <div className="recent-news">
                                 <figure>
-                                    <img src="images/last-news/nadwa.jpg" alt="Image" />
+                                    <img src={firstNews.Img} alt={firstNews.Title} />
                                 </figure>
-                                <div className="content" >
-                                    <small>29 فبراير, 2020</small>
+                                <div className="content">
+                                    <small>{new Date(firstNews.EntryDate).toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' })}</small>
                                     <h3>
-                                        <Link href="/news/news-single">
-                                            إفتتاح محطة دلتا ميكس فى كفر الزيات
+                                        <Link href={`/news/${firstNews.Id}`}>
+                                            {firstNews.Title}
                                         </Link>
-
                                     </h3>
-                                    <div className="author" >
-                                        <img src="images/author01.png" alt="Image" />
+                                    <div className="author">
+                                        <img src="/images/author01.png" alt="Image" />
                                         <span>
-                                            بواسطة <b>Abdullah Hamdy</b>
+                                            بواسطة <b>Abdullah Hamdy</b> {/* You may want to dynamically fetch author data */}
                                         </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-7">
-                            <div className="row inner">
-                                <div className="col-md-6">
+                    )}
+
+                    {/* Display the next two news items in a smaller format */}
+                    <div className="col-lg-7">
+                        <div className="row inner">
+                            {otherNews.map((item) => (
+                                <div className="col-md-6" key={item.Id}>
                                     <div className="recent-news">
                                         <figure>
-                                            <img src="images/last-news/nadwa.jpg" alt="Image" />
+                                            <img src={item.Img} alt={item.Title} />
                                         </figure>
                                         <div className="content">
-                                            <small>29 فبراير, 2020</small>
+                                            <small>{new Date(item.EntryDate).toLocaleDateString('ar-EG', { year: 'numeric', month: 'long', day: 'numeric' })}</small>
                                             <h3>
-                                                <Link href="/news/news-single">
-                                                    إفتتاح محطة دلتا ميكس فى كفر الزيات
+                                                <Link href={`/news/${item.Id}`}>
+                                                    {item.Title}
                                                 </Link>
-
                                             </h3>
-                                            <div className="author" >
-                                                <img src="images/author01.png" alt="Image" />
+                                            <div className="author">
+                                                <img src="/images/author01.png" alt="Image" />
                                                 <span>
-                                                    بواسطة <b>Abdullah Hamdy</b>
+                                                    بواسطة <b>Abdullah Hamdy</b> {/* You may want to dynamically fetch author data */}
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-6">
-                                    <div className="recent-news">
-                                        <figure>
-                                            <img src="images/last-news/nadwa.jpg" alt="Image" />
-                                        </figure>
-                                        <div className="content">
-                                            <small>29 فبراير, 2020</small>
-                                            <h3>
-                                                <Link href="/news/news-single">
-                                                    إفتتاح محطة دلتا ميكس فى كفر الزيات
-                                                </Link>
-
-                                            </h3>
-                                            <div className="author" >
-                                                <img src="images/author01.png" alt="Image" />
-                                                <span>
-                                                    بواسطة <b>Abdullah Hamdy</b>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
-            </section></>
-    )
+            </div>
+        </section>
+    );
 }
 
-export default LastNews; 
+export default LastNews;

@@ -1,20 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createNewsSchema } from '@/utils/validationSchemas';
 import { CreateNewsDto } from '@/utils/dtos';
-import {  News } from '@prisma/client'
+import { News } from '@prisma/client'
+import { newsPerPage } from '@/utils/constants';
 import prisma from '@/utils/db'
+import { verifyToken } from '@/utils/verifyToken';
 
 
 /**
- * @Method GET 
+ * @method GET 
  * @route  ~/api/News
- * @desc   Get All News
- * @assess public
+ * @desc   Get News by page number
+ * @access public
  */
 
 export async function GET(request: NextRequest) {
     try {
-        const allNews = await prisma.news.findMany();
+        const pageNumber = request.nextUrl.searchParams.get("pageNumber") || "1";
+        const allNews = await prisma.news.findMany({
+            skip: newsPerPage * (parseInt(pageNumber) - 1),
+            take: newsPerPage,
+            orderBy: { EntryDate: 'desc' }
+        });
         return NextResponse.json(allNews, { status: 200 });
 
     } catch (error) {
@@ -26,15 +33,21 @@ export async function GET(request: NextRequest) {
 
 
 /**
- * @Method POST 
+ * @method POST 
  * @route  ~/api/News
  * @desc   Add News
- * @assess public
+ * @access private
  */
 
 export async function POST(request: NextRequest) {
     try {
-
+        const user = verifyToken(request);
+        if (user === null || user.isAdmin === false) {
+            return NextResponse.json(
+                { message: 'Only for admin, Access denied' },
+                { status: 403 }
+            )
+        }
         const body = (await request.json()) as CreateNewsDto;
 
         const validation = createNewsSchema.safeParse(body)

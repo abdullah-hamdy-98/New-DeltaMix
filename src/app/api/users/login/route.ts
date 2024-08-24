@@ -2,12 +2,13 @@ import { LoginUserDto } from '@/utils/dtos';
 import { loginSchema } from '@/utils/validationSchemas';
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/utils/db';
+import { setCookie } from '@/utils/genrateToken'
 
 /**
- * @Method POST 
+ * @method POST 
  * @route  ~/api/users/login
  * @desc   Login - Sign in
- * @assess public
+ * @access public
  */
 
 export async function POST(request: NextRequest) {
@@ -31,7 +32,6 @@ export async function POST(request: NextRequest) {
             );
         }
 
-
         const isPasswordValid = body.Pwd === user.Pwd;
 
         if (!isPasswordValid) {
@@ -41,11 +41,18 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        const token = null;
+        const cookie = setCookie({
+            id: user.UserId,
+            username: user.UserName,
+            isAdmin: user.IsAdmin,
+        });
 
         return NextResponse.json(
             { message: 'Login successful' },
-            { status: 200 }
+            {
+                status: 200,
+                headers: { "Set-cookie": cookie }
+            }
         );
 
     } catch (error) {

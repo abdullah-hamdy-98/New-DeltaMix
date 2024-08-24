@@ -73,7 +73,7 @@ function Mobile() {
                                 </li>
                                 <li><Link href="/stations">المحطات</Link></li>
                                 <li><Link href="/projects">المشروعات</Link></li>
-                                <li><Link href="/news">الأخبار</Link></li>
+                                <li><Link href="/news?pageNumber=1">الأخبار</Link></li>
                                 <li><Link href="/contact">إتصل بنا</Link></li>
                             </ul>
                         </div>

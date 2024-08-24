@@ -1,6 +1,12 @@
-export type News = {
-    id: number,
-    userid: number,
-    Title: string,
-    name: string
+import { News } from '@prisma/client';
+
+
+
+export type JWTPayload = {
+    id: number;
+    username: string;
+    isAdmin: boolean;
 }
+
+
+export type SingleNews = News

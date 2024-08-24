@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { UpdateNewsDto } from '@/utils/dtos';
 import prisma from '@/utils/db'
+import { verifyToken } from '@/utils/verifyToken';
 
 
 interface Props {
@@ -8,10 +9,10 @@ interface Props {
 }
 
 /**
- * @Method GET 
+ * @method GET 
  * @route  ~/api/News/:ID
- * @desc   Get All News
- * @assess public
+ * @desc   Get single news by ID
+ * @access public
  */
 
 export async function GET(request: NextRequest, { params }: Props) {
@@ -30,14 +31,22 @@ export async function GET(request: NextRequest, { params }: Props) {
 }
 
 /**
- * @Method PUT 
+ * @method PUT 
  * @route  ~/api/News/:ID
- * @desc   Get All News
- * @assess public
+ * @desc   Update single news by ID
+ * @access private
  */
 
 export async function PUT(request: NextRequest, { params }: Props) {
     try {
+        const user = verifyToken(request);
+        if (user === null || user.isAdmin === false) {
+            return NextResponse.json(
+                { message: 'Only for admin, Access denied' },
+                { status: 403 }
+            )
+        }
+
         const news = await prisma.news.findUnique({ where: { Id: parseInt(params.id) } });
         if (!news) {
             return NextResponse.json({ message: 'No news to show' }, { status: 404 });
@@ -64,14 +73,22 @@ export async function PUT(request: NextRequest, { params }: Props) {
 }
 
 /**
- * @Method DELETE 
+ * @method DELETE 
  * @route  ~/api/News/:ID
  * @desc   Get All News
- * @assess public
+ * @access private
  */
 
 export async function DELETE(request: NextRequest, { params }: Props) {
     try {
+        const user = verifyToken(request);
+        if (user === null || user.isAdmin === false) {
+            return NextResponse.json(
+                { message: 'Only for admin, Access denied' },
+                { status: 403 }
+            )
+        }
+
         const news = await prisma.news.findUnique({ where: { Id: parseInt(params.id) } });
         if (!news) {
             return NextResponse.json({ message: 'No news to Delete' }, { status: 404 });

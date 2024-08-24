@@ -17,3 +17,9 @@ export interface LoginUserDto {
     UserId: number,
     Pwd: string
 }
+
+export interface UpdateUserDto {
+    UserName?: string;
+    Pwd?: string;
+    Img?: string;
+}

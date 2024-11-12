@@ -22,7 +22,7 @@
     margin-top: 50px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff; /* Blue background */
+    background-color: #2b2b2b; /* Blue background */
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -30,7 +30,7 @@
   }
   
   .submit-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #4f4f4f; /* Darker blue on hover */
   }
   
   label {
@@ -44,18 +44,21 @@
   
 
   .file-input-label p {
-    background-color: #dbdbdb;
+    background-color: #2b2b2b00;
     cursor: pointer;
-    width: 40%;
-    color: #787878;
+    width: 100%;
+    color: #2b2b2b7c;
+    font-weight: 400px;
     text-align: center;
     border: 1px solid #dbdbdb;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition:  0.5s ease;
   }
   
   .file-input-label p:hover {
-    background-color: #b1b1b1;
+    background-color: #2b2b2b;
+    color: #ffffff;
+
   }
 
   

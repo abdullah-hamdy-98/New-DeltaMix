@@ -23,6 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
+
       <body className={inter.className}>
         {children}
         <ToastContainer theme="dark" position="bottom-center" />

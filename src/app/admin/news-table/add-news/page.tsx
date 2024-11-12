@@ -35,7 +35,7 @@ const NewsTable: React.FC = () => {
     };
 
     return (
-        <form onSubmit={formSubmitHandler} className="form-container">
+        <form className="form-container">
             <input
                 className='input-field'
                 placeholder="عنوان الخبر"
@@ -55,9 +55,8 @@ const NewsTable: React.FC = () => {
                 <p>{image ? image.name : 'الصورة الرئيسية..'}</p>
             </label>
 
-            <MyEditor onContentChange={(content) => setEditorContent(content)} />
 
-            <button type="submit" className='submit-button'>نشر</button>
+            <button type="button" className='submit-button'>نشر</button>
         </form>
     );
 };
